@@ -155,6 +155,24 @@ html,
   font-weight: 500;
 }
 
+.weather-details {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  font-size: 1.08rem;
+  color: var(--primary);
+  justify-content: center;
+}
+
+.weather-details div {
+  background: rgba(79, 209, 197, 0.08);
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  min-width: 120px;
+  text-align: center;
+  box-shadow: 0 1px 4px #4fd1c511;
+}
+
 .error-msg {
   color: var(--error);
   background: #fff0f0;

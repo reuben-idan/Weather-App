@@ -4,12 +4,13 @@
   "description": "A simple weather application that fetches weather data based on user input.",
   "main": "src/index.js",
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently \"npm start\" \"python weather_api.py\"",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "proxy": "http://localhost:5000",
   "keywords": [
     "weather",
     "react",
@@ -34,5 +35,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
   }
 }
