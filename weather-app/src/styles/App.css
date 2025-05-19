@@ -2,6 +2,7 @@
 <link href="https://fonts.googleapis.com/css?family=Inter:400,600,700,900&display=swap" rel="stylesheet">
 */
 
+/* Root variables for easy theming */
 :root {
   --primary: #22223b;
   --accent: #4fd1c5;
@@ -13,7 +14,7 @@
   --error: #ff6b6b;
   --shadow: 0 8px 32px 0 rgba(44, 62, 80, 0.10);
   --radius: 22px;
-  --transition: 0.22s cubic-bezier(.4, 0, .2, 1);
+  --transition: 0.22s cubic-bezier(.4,0,.2,1);
 }
 
 /* Modern font for the whole app */
@@ -23,7 +24,7 @@ html,
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  background: transparent;
+  background: var(--background);
   font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
   color: var(--text);
 }
@@ -52,7 +53,7 @@ html,
 }
 
 .app-title {
-  font-size: 2.9rem;
+  font-size: 2.5rem;
   font-weight: 900;
   letter-spacing: 1px;
   color: var(--primary);
@@ -63,7 +64,7 @@ html,
 
 .subtitle {
   color: var(--muted);
-  font-size: 1.18rem;
+  font-size: 1.1rem;
   font-weight: 400;
   margin-bottom: 0;
   letter-spacing: 0.2px;
@@ -111,113 +112,11 @@ html,
   font-size: 1.13rem;
   font-weight: 700;
   cursor: pointer;
-  transition: background 0.18s, transform 0.12s;
   box-shadow: 0 2px 8px #4fd1c522;
-}
-
-.search-btn:hover,
-.search-btn:focus {
-  background: linear-gradient(90deg, var(--accent-dark) 0%, var(--accent) 100%);
-  transform: translateY(-2px) scale(1.04);
-}
-
-.single-weather-section {
-  width: 100%;
+  transition: background 0.18s, transform 0.12s;
   display: flex;
-  flex-direction: column;
   align-items: center;
-}
-
-.weather-card {
-  background: var(--card-bg);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 2.2rem 2.5rem 1.5rem 2.5rem;
-  margin-bottom: 1.2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  animation: fadeIn 0.7s;
-}
-
-.temp {
-  font-size: 3.5rem;
-  font-weight: 700;
-  color: var(--accent);
-  margin-bottom: 0.5rem;
-  letter-spacing: 1px;
-  text-shadow: 0 2px 12px #4fd1c522;
-}
-
-.desc {
-  font-size: 1.13rem;
-  color: var(--primary);
-  font-weight: 500;
-}
-
-.weather-details {
-  display: flex;
-  gap: 1.5rem;
-  margin-top: 1rem;
-  font-size: 1.08rem;
-  color: var(--primary);
-  justify-content: center;
-}
-
-.weather-details div {
-  background: rgba(79, 209, 197, 0.08);
-  border-radius: 12px;
-  padding: 0.5rem 1rem;
-  min-width: 120px;
-  text-align: center;
-  box-shadow: 0 1px 4px #4fd1c511;
-}
-
-.error-msg {
-  color: var(--error);
-  background: #fff0f0;
-  border-radius: 8px;
-  padding: 0.7rem 1.2rem;
-  margin-top: 1rem;
-  font-weight: 500;
-  box-shadow: 0 2px 8px #ff6b6b11;
-  animation: fadeIn 0.5s;
-}
-
-.loader {
-  border: 4px solid #e3e3e3;
-  border-top: 4px solid var(--accent);
-  border-radius: 50%;
-  width: 38px;
-  height: 38px;
-  animation: spin 1s linear infinite;
-  margin: 2rem auto;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade-in {
-  animation: fadeIn 0.7s;
+  gap:
 }
 
 /* FiveDayForecast styles */
