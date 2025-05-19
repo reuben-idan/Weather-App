@@ -34,11 +34,13 @@ Weather App provides instant access to current temperature data for any city wor
 ## Features
 
 - **City Weather Search:** Instantly search for current weather by entering any city name.
+- **Display additional weather metrics:** (humidity, wind, etc.).
 - **Real-Time Data:** Displays live temperature data powered by the Open-Meteo API.
 - **Responsive UI:** Modern, mobile-friendly design with smooth feedback and subtle animations.
 - **Reliable Error Handling:** Handles invalid input, missing cities, API failures, and more.
 - **Logging:** All API responses (including errors) are logged for traceability and debugging.
 - **Input Validation:** Prevents empty or invalid city submissions.
+- **Comprehensive unit and integration tests.**
 - **Open Source:** Easily extensible for new features and improvements.
 
 ---
@@ -127,13 +129,13 @@ This app uses the [Open-Meteo API](https://open-meteo.com/) to fetch weather dat
 
 ## Future Improvements
 
-- Display additional weather metrics (humidity, wind, etc.).
+
 - Integrate map-based city selection.
 - Multi-language support.
 - Email/share weather reports.
 - Add persistent logging for audit trails.
 - Push notifications for weather changes.
-- More comprehensive unit and integration tests.
+
 
 ---
 
