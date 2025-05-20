@@ -83,7 +83,7 @@ weather-app/
 
 3. **Run the application:**
    ```bash
-   npm run dev or npm start
+   npm run dev
    ```
 
 4. **Open your browser:**
