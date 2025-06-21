@@ -1,0 +1,6 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "weather-app/build",
+  "installCommand": "npm run install",
+  "framework": "create-react-app"
+}

@@ -1,0 +1,19 @@
+# Ignore development files
+*.log
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Ignore Python files (since we're only deploying the frontend)
+*.py
+__pycache__/
+*.pyc
+
+# Ignore test files
+tests/
+test_*.py
+
+# Ignore other directories
+.qodo/
+.github/ 
