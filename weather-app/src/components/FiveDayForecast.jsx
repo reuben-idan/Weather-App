@@ -4,11 +4,39 @@ import "./FiveDayForecast.css";
 
 async function get5DayForecast(lat, lon) {
   return fetchWeatherWithCache(`forecast_${lat}_${lon}`, async () => {
-    const res = await fetch(
-      `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=temperature_2m_max,temperature_2m_min,weathercode&timezone=auto`
-    );
-    const data = await res.json();
-    return data.daily;
+    // For demo purposes, generate mock 5-day forecast data
+    const today = new Date();
+    const forecast = {
+      time: [],
+      temperature_2m_max: [],
+      temperature_2m_min: [],
+      weathercode: [],
+    };
+
+    for (let i = 0; i < 5; i++) {
+      const date = new Date(today);
+      date.setDate(date.getDate() + i);
+      forecast.time.push(date.toISOString().split("T")[0]);
+
+      // Generate mock temperature data based on coordinates
+      const baseTemp = 15 + (lat % 10) + (lon % 5);
+      const variation = Math.sin(i * 0.5) * 5;
+      const maxTemp = Math.round(baseTemp + variation + 3);
+      const minTemp = Math.round(baseTemp + variation - 3);
+
+      forecast.temperature_2m_max.push(maxTemp);
+      forecast.temperature_2m_min.push(minTemp);
+
+      // Generate mock weather codes
+      const weatherCodes = [
+        0, 1, 2, 3, 45, 48, 51, 53, 55, 61, 63, 65, 80, 81, 82,
+      ];
+      forecast.weathercode.push(
+        weatherCodes[Math.floor(Math.random() * weatherCodes.length)]
+      );
+    }
+
+    return forecast;
   });
 }
 
